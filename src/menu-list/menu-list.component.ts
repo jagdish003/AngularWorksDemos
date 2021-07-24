@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import {
   animate,
   state,
@@ -6,6 +6,9 @@ import {
   transition,
   trigger
 } from '@angular/animations';
+import { Navitems } from '../navitems';
+import { Router } from '@angular/router';
+import { NavSericesService } from '../nav-serices.service';
 @Component({
   selector: 'app-menu-list',
   templateUrl: './menu-list.component.html',
@@ -22,7 +25,23 @@ import {
   ]
 })
 export class MenuListComponent implements OnInit {
-  constructor() {}
-
+  constructor(public router: Router, private navService: NavSericesService) {
+    if (this.depth === undefined) {
+      this.depth = 0;
+    }
+  }
+  expanded: boolean;
+  @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
+  @Input() item: Navitems;
+  @Input() depth: number;
   ngOnInit() {}
+  onItemSelected(item: Navitems) {
+    if (!item.children || !item.children.length) {
+      this.router.navigate([item.route]);
+      this.navService.closeNav();
+    }
+    if (item.children && item.children.length) {
+      this.expanded = !this.expanded;
+    }
+  }
 }
