@@ -30,7 +30,7 @@ export class MenuListComponent implements OnInit {
       this.depth = 0;
     }
   }
-  expanded: boolean;
+  expanded: boolean = false;
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
   @Input() item: Navitems;
   @Input() depth: number;

@@ -14,10 +14,10 @@
   </span>
 </a>
 <div *ngIf="expanded">
-  <app-menu-list-item
+  <app-menu-list
     *ngFor="let child of item.children"
     [item]="child"
     [depth]="depth+1"
   >
-  </app-menu-list-item>
+  </app-menu-list>
 </div>
