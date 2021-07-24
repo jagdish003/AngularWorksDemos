@@ -2,7 +2,9 @@
               [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}">
   <!-- <mat-icon class="routeIcon">{{item.iconName}}</mat-icon> -->
   {{item.displayName}}
-  <span fxFlex *ngIf="item.children && item.children.length">
+
+  <!-- *ngIf="item.children && item.children.length" -->
+  <span fxFlex >
     <span fxFlex></span>
     <mat-progress-bar style="margin-top: 10px;width: 80%;" *ngIf="item.IsCalled == -1" mode="indeterminate"></mat-progress-bar>
 
