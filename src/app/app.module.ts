@@ -1,29 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MenuListComponent } from '../menu-list/menu-list.component';
-import { NavSericesService } from '../nav-serices.service';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
-    FormsModule,
-    MatMenuModule,
-    MatListModule,
-    MatIconModule,
-    MatSidenavModule,
-    BrowserAnimationsModule
+    AppRoutingModule
   ],
-  declarations: [AppComponent, MenuListComponent],
-  bootstrap: [AppComponent],
-  providers: [NavSericesService]
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
