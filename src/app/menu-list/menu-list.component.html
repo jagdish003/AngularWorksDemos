@@ -4,6 +4,8 @@
   {{item.displayName}}
   <span fxFlex *ngIf="item.children && item.children.length">
     <span fxFlex></span>
+    <mat-progress-bar style="margin-top: 10px;width: 80%;" *ngIf="item.IsCalled == -1" mode="indeterminate"></mat-progress-bar>
+
     <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
       expand_more
     </mat-icon>

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,7 +8,7 @@ export class NavServicesService {
 
   public appDrawer: any;
 
-  constructor() {}
+  constructor(private httpClient:HttpClient) {}
 
   public closeNav() {
     this.appDrawer.close();
@@ -15,5 +16,8 @@ export class NavServicesService {
 
   public openNav() {
     this.appDrawer.open();
+  }
+  getData(){
+return this.httpClient.get("http://dummy.restapiexample.com/api/v1/employees");
   }
 }
