@@ -9,6 +9,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MenuListComponent } from '../menu-list/menu-list.component';
 import { NavSericesService } from '../nav-serices.service';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -16,7 +18,9 @@ import { NavSericesService } from '../nav-serices.service';
     FormsModule,
     MatMenuModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    BrowserAnimationsModule
   ],
   declarations: [AppComponent, MenuListComponent],
   bootstrap: [AppComponent],

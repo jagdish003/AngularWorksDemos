@@ -1,2 +1,13 @@
-<p>Hello</p>
-<app-menu-list></app-menu-list>
+<mat-sidenav-container>
+  <mat-sidenav #appDrawer mode="over" opened="false">
+    <mat-nav-list>
+      <app-menu-list
+        *ngFor="let item of navItems"
+        [item]="item"
+      ></app-menu-list>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
+<span class="version-info"
+  >Current build: {{version.full ? version.full : version}}</span
+>
